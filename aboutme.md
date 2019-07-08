@@ -1,16 +1,17 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Andrew Quist
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Andrew. This is my blog. Some quick facts about me:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- I drive a google streetview car.
+- Sunlight makes me sneeze.
+- I'm studying both computer science and studio art.
+- I have the short term memory capacity of a 7-year-old.
+- I live in beer city USA.
 
-What else do you need?
+When I'm not programming, you'll find me swimming laps, drawing pictures, or eating cheeseburgers.
 
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+[here's my portfolio.](https://andrewq.myportfolio.com/)
