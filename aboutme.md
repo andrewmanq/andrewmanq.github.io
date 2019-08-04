@@ -4,7 +4,7 @@ title: About me
 subtitle: Andrew Quist
 ---
 
-![profile](/img/thisIsMe.jpg){: .center-block :}
+![profile](/img/me.jpg){: .center-block :}
 
 My name is Andrew. This is my blog. Some quick facts about me:
 
