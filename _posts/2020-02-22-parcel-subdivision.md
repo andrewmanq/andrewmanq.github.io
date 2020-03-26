@@ -1,24 +1,28 @@
 ---
 layout: post
-title: Blocks, Lots, and Props
-subtitle: (oh my)
+title: Parcel Division
+subtitle: Making complex road patterns with simple algorithms
 tags: [software, ai, gamedev, architecture, procedural generation, unity, cyberpunk, cityscape, open world, random]
 comments: true
 ---
-While the current global pandemic is nothing to be celebrated or trivialized, I have been thankful for the opportunity to work almost uninterruptedly on the city generator.
+This post took a while because I spent a month in Japan. Staying in Tokyo gave me a lot of inspiration for this project! Dense neon cities like Tokyo are exactly the feel I'm going for with this project.
 
-I showed my girlfriend the picture below, and she told me she enjoyed the pattern so much she would sew it onto a quilt! Unfortunately, most sewing machines don't have the raw power to install unity, so she'll probably have to do it by hand.
+![demo](/img/post2img3.jpg){: .center-block :}
 
-![demo](/img/blocks.jpg){: .center-block :}
+One thing I realized (see: last post) is that the only way to manage the complexity of a city generator is to do almost everything recursively. Breaking each area down into divisions, and then subdivisions, and then sub-subdivisions, and all that stuff.
 
-Each road segment is split down the middle, and each half is handled by the adjacent block. The sidewalk space is wider or narrower depending on the width of the streets. The way I determine how many lanes the road has depends on the order of subdivision: the first cut of the city outline is always the main road, and all branching roads are smaller.
+This meant I had to start at the very top level, which is road map and parcel generation. The process is actually pretty straightforward: start with a polygon. Divide the polygon in half (typically along the longest edge). Cut those polygons in half. To introduce variety, I specify how perpendicular to the longest edge the cut happens, and randomize angle variations. The cuts stop when they hit a minimum area, which is divided into building parcels.
 
-![demo](/img/triangleCity.jpg){: .center-block :}
+I don't plan to implement any curved roads, and yet this seems to generate pretty organic structures. Especially when using different starting polygons like the one below.
 
-I added some prototype trees and lamp posts along the roads and it really added more charm than I expected:
+![demo](/img/post2img4.jpg){: .center-block :}
 
-![demo](/img/treeCity.jpg){: .center-block :}
+I'm using these new polygon operations to re-write the architect as well. Even just extruding the parcels into straight columns makes compelling structures:
 
-Thanks to object batching, I can cram a lot of these details into a single block, and it really helps to give the city a sense of scale.
+![demo](/img/post2img2.jpg){: .center-block :}
 
-Expect more frequent posts as I keep myself quarantined -- and check my twitter for video tours of different interesting cityscapes!
+And applying a simple window material to them looks pretty imposing:
+
+![demo](/img/post2img1.jpg){: .center-block :}
+
+I'm looking forward to tweaking this code to see what kind of environments it can create.
